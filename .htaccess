@@ -1,0 +1,5 @@
+RewriteEngine On
+
+# Redirect to login.php when accessing /login
+RewriteCond %{REQUEST_URI} ^/sibs/login$ [NC]
+RewriteRule ^login$ login.php [L]
