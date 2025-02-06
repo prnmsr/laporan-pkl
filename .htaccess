@@ -1,5 +1,16 @@
 RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.php -f
+RewriteRule ^(.+)$ $1.php [L]
 
 # Redirect to login.php when accessing /login
 RewriteCond %{REQUEST_URI} ^/sibs/login$ [NC]
 RewriteRule ^login$ login.php [L]
+
+# Tambahkan aturan untuk halaman lain seperti index
+RewriteCond %{REQUEST_URI} ^/sibs/$ [NC]
+RewriteRule ^$ index.php [L]
+
+# Redirect to register.php when accessing /register
+RewriteCond %{REQUEST_URI} ^/sibs/register$ [NC]
+RewriteRule ^register$ register.php [L]

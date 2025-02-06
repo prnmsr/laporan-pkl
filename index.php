@@ -1,13 +1,12 @@
 <?php
-// Include header
+session_start();
+include 'app/koneksi.php';
+
+$base_url = 'http://localhost/sibs/';
+
+// Memuat header, navbar, dan halaman utama
 include 'views/layout/header.php';
-
-// Include navbar
 include 'views/layout/navbar.php';
-
-// Include hero section
-include 'views/pages/section.php';
-
-// Include footer
-include 'views/layout/footer.php';
 ?>
+<?php include 'views/pages/dashboard.php'; ?>
+<?php include 'views/layout/footer.php'; ?>
